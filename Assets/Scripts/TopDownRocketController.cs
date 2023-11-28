@@ -50,8 +50,6 @@ public class TopDownRocketController : MonoBehaviour
 
         ApplySteering();
 
-
-
     }
 
     void ApplyEngineForce()
@@ -131,5 +129,5 @@ public class TopDownRocketController : MonoBehaviour
 
     }
 
-    
+
 }

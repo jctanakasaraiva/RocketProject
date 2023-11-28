@@ -34,11 +34,6 @@ public class LandingGearController : MonoBehaviour
             animator.SetBool("LandingGearOff", landingGearActivate);
 
             polygonCollider2D.enabled = landingGearActivate;
-
-        }
-        else
-        {
-            polygonCollider2D.enabled = landingGearActivate;
         }
     }
 }
