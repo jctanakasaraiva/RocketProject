@@ -58,7 +58,6 @@ public class TopDownRocketController : MonoBehaviour
     {
         if (landingGearController.landingGearActivate)
         {
-            Debug.Log("Aqui");
             landingGearSpeed = landingGearFactor;
         }
         else
