@@ -40,8 +40,5 @@ public class LandingGearController : MonoBehaviour
         {
             polygonCollider2D.enabled = landingGearActivate;
         }
-
-
-
     }
 }
