@@ -28,7 +28,6 @@ public class Satellite : MonoBehaviour
         SatelliteTimer();
     }
 
-
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -39,7 +38,6 @@ public class Satellite : MonoBehaviour
             GameController.instance.UpdateScoreText();
 
             destroySatellite();
-
         }
     }
 
@@ -66,8 +64,5 @@ public class Satellite : MonoBehaviour
             GameController.instance.totalInstancedItems -= 1;
             itemDead = true;
         }
-
-
-
     }
 }

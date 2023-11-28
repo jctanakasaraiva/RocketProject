@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class TopDownRocketController : MonoBehaviour
@@ -13,6 +8,10 @@ public class TopDownRocketController : MonoBehaviour
     public float accelerationFactor = 30.0f;
     public float turnFactor = 3.5f;
     public float maxSpeed = 4f;
+    [Range(0.1f, 1f)]
+    public float landingGearFactor;
+
+    private float landingGearSpeed;
 
     float accelerationInput = 0;
     float steeringInput = 0;
@@ -25,6 +24,8 @@ public class TopDownRocketController : MonoBehaviour
     public AudioSource engineAudio;
 
     Rigidbody2D rocketRigidBody2D;
+
+    [SerializeField] private LandingGearController landingGearController;
 
     void Awake()
     {
@@ -44,14 +45,26 @@ public class TopDownRocketController : MonoBehaviour
 
     void FixedUpdate()
     {
+        LandingGearForce();
+
         ApplyEngineForce();
 
         KillOrthogonalVelocity();
 
         ApplySteering();
+    }
 
-
-
+    void LandingGearForce()
+    {
+        if (landingGearController.landingGearActivate)
+        {
+            Debug.Log("Aqui");
+            landingGearSpeed = landingGearFactor;
+        }
+        else
+        {
+            landingGearSpeed = 1f;
+        }
     }
 
     void ApplyEngineForce()
@@ -77,7 +90,7 @@ public class TopDownRocketController : MonoBehaviour
             rocketRigidBody2D.drag = -0;
         }
 
-        Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
+        Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor * landingGearSpeed;
 
         rocketRigidBody2D.AddForce(engineForceVector, ForceMode2D.Force);
 
@@ -131,5 +144,5 @@ public class TopDownRocketController : MonoBehaviour
 
     }
 
-    
+
 }

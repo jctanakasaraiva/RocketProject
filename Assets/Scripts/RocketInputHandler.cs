@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RocketInputHandler : MonoBehaviour
@@ -18,8 +16,6 @@ public class RocketInputHandler : MonoBehaviour
 
         inputVector.x = Input.GetAxis("Horizontal");
         inputVector.y = Input.GetAxis("Vertical");
-
-
 
         topDownRocketController.SetInputVector(inputVector);
     }

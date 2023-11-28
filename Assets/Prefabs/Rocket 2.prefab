@@ -414,8 +414,10 @@ MonoBehaviour:
   accelerationFactor: 70
   turnFactor: 6
   maxSpeed: 5
+  landingGearFactor: 0
   thruster: {fileID: 2192425904004054018}
   engineAudio: {fileID: 8654078838389443884}
+  landingGearController: {fileID: 1889727316}
 --- !u!50 &2192425904425994478
 Rigidbody2D:
   serializedVersion: 4
