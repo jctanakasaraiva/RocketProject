@@ -27,7 +27,9 @@ public class TopDownRocketController : MonoBehaviour
 
     bool isDead = false;
 
-    Rigidbody2D rocketRigidBody2D;
+    public Rigidbody2D rocketRigidBody2D;
+
+    public SpriteRenderer rocketSpriterRendere;
 
     [SerializeField] private LandingGearController landingGearController;
     [SerializeField] GameObject rocketExplosion;
@@ -158,8 +160,9 @@ public class TopDownRocketController : MonoBehaviour
             explosionAudio.Play();
             rocketRigidBody2D.velocity = deadVelocity;
             rocketExplosion.GetComponent<SpriteRenderer>().enabled = true;
-            //ExplosionAnimation.SetActive(true);
             rocketExplosion.GetComponent<Animator>().enabled = true;
+            rocketSpriterRendere.enabled = false;
+            this.enabled = false;
             Destroy(gameObject, 1f);
             Debug.Log("Teste");
         }

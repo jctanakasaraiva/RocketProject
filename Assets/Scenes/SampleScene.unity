@@ -249,6 +249,7 @@ MonoBehaviour:
   scoreText: {fileID: 151799877}
   totalInstancedItems: 0
   satellite: {fileID: 4958234614232921594, guid: cb5ebea0ac65fac4c9aca82977a7be0f, type: 3}
+  player: {fileID: 1633323031}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1222199049}
+  - component: {fileID: 1222199050}
   - component: {fileID: 1222199048}
   m_Layer: 0
   m_Name: Sea
@@ -551,19 +553,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1222199048
-BoxCollider:
+--- !u!61 &1222199048
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222199047}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.9883461, y: -5.1748376}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 43.561646, y: 3.8137684, z: 1}
-  m_Center: {x: -0.90141296, y: -4.628442, z: 0}
+  m_Size: {x: 43.649193, y: 4.5512}
+  m_EdgeRadius: 0
 --- !u!4 &1222199049
 Transform:
   m_ObjectHideFlags: 0
@@ -581,6 +596,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222199050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222199047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543d75e5201aa3d48b769eff182607b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1364945543
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +799,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.4935474, y: 1.7684805}
   m_EdgeRadius: 0
+--- !u!1 &1633323031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2192425904425994483, guid: 464d1be940b8045418df2484afbde31d, type: 3}
+  m_PrefabInstance: {fileID: 2121641394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1833710063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3182421587957140909, guid: 593fca92754a3a440b779c7917cc4c15, type: 3}

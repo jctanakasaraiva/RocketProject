@@ -523,6 +523,8 @@ MonoBehaviour:
   ExplosionAnimation: {fileID: 485030244}
   engineAudio: {fileID: 8654078838389443884}
   explosionAudio: {fileID: 1633323035}
+  rocketRigidBody2D: {fileID: 2192425904425994478}
+  rocketSpriterRendere: {fileID: 2192425904425994482}
   landingGearController: {fileID: 1889727316}
   rocketExplosion: {fileID: 485030244}
 --- !u!50 &2192425904425994478

@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
 
     public GameObject satellite;
+    public GameObject player;
     void Start()
     {
         instance = this;
@@ -26,6 +27,7 @@ public class GameController : MonoBehaviour
     {
         RandomInstanceItems();
         TimerToInstanceCountDown();
+        InstanceNewPlayer();
     }
 
     public void UpdateScoreText()
@@ -48,5 +50,11 @@ public class GameController : MonoBehaviour
         TimerToInstance -= Time.deltaTime;
     }
 
-
+    void InstanceNewPlayer(){
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            GameObject invokePlayer = Instantiate(player);
+            invokePlayer.transform.position = new Vector3(-0.4742927f, -8.06973f, 0);
+        }
+    }
 }
