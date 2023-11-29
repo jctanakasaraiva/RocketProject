@@ -20,12 +20,17 @@ public class TopDownRocketController : MonoBehaviour
     float velocityVsUp = 0;
 
     public GameObject thruster;
+    public GameObject ExplosionAnimation;
 
     public AudioSource engineAudio;
+    public AudioSource explosionAudio;
+
+    bool isDead = false;
 
     Rigidbody2D rocketRigidBody2D;
 
     [SerializeField] private LandingGearController landingGearController;
+    [SerializeField] GameObject rocketExplosion;
 
     void Awake()
     {
@@ -142,8 +147,24 @@ public class TopDownRocketController : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
 
-    
+        if (collider.gameObject.tag == "Sea" && isDead == false)
+        {
+            Vector2 deadVelocity = new Vector2(0f, 0f);
+            isDead = true;
+
+            explosionAudio.Play();
+            rocketRigidBody2D.velocity = deadVelocity;
+            rocketExplosion.GetComponent<SpriteRenderer>().enabled = true;
+            //ExplosionAnimation.SetActive(true);
+            rocketExplosion.GetComponent<Animator>().enabled = true;
+            Destroy(gameObject, 1f);
+            Debug.Log("Teste");
+        }
+
+    }
 
 
 }
