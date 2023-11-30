@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RocketDestruction : MonoBehaviour
 {
-    bool isDead = false;
+    //bool isDead = false;
 
-    public AudioSource explosionAudio;
+    [SerializeField] AudioSource explosionAudio;
 
     [SerializeField] private Rigidbody2D rocketRigidBody2D;
 
@@ -17,18 +17,17 @@ public class RocketDestruction : MonoBehaviour
 
     [SerializeField] private Animator explosionAnimator;
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
 
-        if (collider.gameObject.tag == "Sea" && isDead == false)
-        {
-            RocketExplosion();
+
+    private void OnCollisionEnter2D(Collision2D collider) {
+        if(collider.gameObject.tag == "Platform"){
+            Debug.Log("On platform");
         }
     }
 
-    void RocketExplosion()
+    public void RocketExplosion()
     {
-        isDead = true;
+        //isDead = true;
         explosionAudio.Play();
         Vector2 deadVelocity = new Vector2(0f, 0f);
         rocketRigidBody2D.velocity = deadVelocity;
