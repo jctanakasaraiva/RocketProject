@@ -13,41 +13,25 @@ public class TopDownRocketController : MonoBehaviour
 
     private float landingGearSpeed;
 
-    float accelerationInput = 0;
+    public float accelerationInput = 0;
     float steeringInput = 0;
     float rotationAngle = 0;
 
     float velocityVsUp = 0;
 
     public GameObject thruster;
-    public GameObject ExplosionAnimation;
-
-    public AudioSource engineAudio;
-    public AudioSource explosionAudio;
-
-    bool isDead = false;
-
+        
     public Rigidbody2D rocketRigidBody2D;
 
-    public SpriteRenderer rocketSpriterRendere;
+   
 
+    public GameObject rocketGameObject;
     [SerializeField] private LandingGearController landingGearController;
-    [SerializeField] GameObject rocketExplosion;
-
-    void Awake()
-    {
-        rocketRigidBody2D = GetComponent<Rigidbody2D>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        PlayEngineAudio();
+
     }
 
     void FixedUpdate()
@@ -135,39 +119,9 @@ public class TopDownRocketController : MonoBehaviour
         }
     }
 
-    public void PlayEngineAudio()
-    {
 
-        if (accelerationInput > 0.5 && engineAudio.isPlaying == false)
-        {
-            engineAudio.Play();
-        }
 
-        if (accelerationInput <= 0.5 && engineAudio.isPlaying == true)
-        {
-            engineAudio.Stop();
-        }
-
-    }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-
-        if (collider.gameObject.tag == "Sea" && isDead == false)
-        {
-            Vector2 deadVelocity = new Vector2(0f, 0f);
-            isDead = true;
-
-            explosionAudio.Play();
-            rocketRigidBody2D.velocity = deadVelocity;
-            rocketExplosion.GetComponent<SpriteRenderer>().enabled = true;
-            rocketExplosion.GetComponent<Animator>().enabled = true;
-            rocketSpriterRendere.enabled = false;
-            this.enabled = false;
-            Destroy(gameObject, 1f);
-            Debug.Log("Teste");
-        }
-
-    }
+    
 
 
 }

@@ -414,7 +414,9 @@ GameObject:
   - component: {fileID: 2192425904425994478}
   - component: {fileID: 2192425904425994477}
   - component: {fileID: 8654078838389443884}
+  - component: {fileID: 1440985931}
   - component: {fileID: 1633323035}
+  - component: {fileID: 4502795347791359723}
   m_Layer: 0
   m_Name: Rocket 2
   m_TagString: Player
@@ -519,14 +521,11 @@ MonoBehaviour:
   turnFactor: 6
   maxSpeed: 5
   landingGearFactor: 0.6
+  accelerationInput: 0
   thruster: {fileID: 2192425904004054018}
-  ExplosionAnimation: {fileID: 485030244}
-  engineAudio: {fileID: 8654078838389443884}
-  explosionAudio: {fileID: 1633323035}
   rocketRigidBody2D: {fileID: 2192425904425994478}
-  rocketSpriterRendere: {fileID: 2192425904425994482}
+  rocketGameObject: {fileID: 2192425904425994483}
   landingGearController: {fileID: 1889727316}
-  rocketExplosion: {fileID: 485030244}
 --- !u!50 &2192425904425994478
 Rigidbody2D:
   serializedVersion: 4
@@ -660,6 +659,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1440985931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192425904425994483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3584f1be9892224f8117a7ec9d1b04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topDownRocketController: {fileID: 2192425904425994480}
+  engineAudio: {fileID: 8654078838389443884}
 --- !u!82 &1633323035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -756,3 +769,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4502795347791359723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192425904425994483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423ba563c09bb1e43ab6f02ed0e9fd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionAudio: {fileID: 1633323035}
+  rocketRigidBody2D: {fileID: 2192425904425994478}
+  rocketSpriteRenderer: {fileID: 2192425904425994482}
+  thrusterSpriteRenderer: {fileID: 2192425904004054016}
+  landingGearSpriteRenderer: {fileID: 1760005490}
+  explosionSpriteRenderer: {fileID: 485030246}
+  explosionAnimator: {fileID: 485030245}
