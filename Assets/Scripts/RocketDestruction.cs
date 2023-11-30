@@ -8,20 +8,14 @@ public class RocketDestruction : MonoBehaviour
 
     public AudioSource explosionAudio;
 
-    public Rigidbody2D rocketRigidBody2D;
+    [SerializeField] private Rigidbody2D rocketRigidBody2D;
 
-    public SpriteRenderer rocketSpriteRenderer;
-    public SpriteRenderer thrusterSpriteRenderer;
-    public SpriteRenderer landingGearSpriteRenderer;
-    public SpriteRenderer explosionSpriteRenderer;
+    [SerializeField] private SpriteRenderer rocketSpriteRenderer;
+    [SerializeField] private SpriteRenderer thrusterSpriteRenderer;
+    [SerializeField] private SpriteRenderer landingGearSpriteRenderer;
+    [SerializeField] private SpriteRenderer explosionSpriteRenderer;
 
-    public Animator explosionAnimator;
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    [SerializeField] private Animator explosionAnimator;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -34,9 +28,9 @@ public class RocketDestruction : MonoBehaviour
 
     void RocketExplosion()
     {
-        Vector2 deadVelocity = new Vector2(0f, 0f);
         isDead = true;
         explosionAudio.Play();
+        Vector2 deadVelocity = new Vector2(0f, 0f);
         rocketRigidBody2D.velocity = deadVelocity;
         explosionSpriteRenderer.enabled = true;
         explosionAnimator.enabled = true;

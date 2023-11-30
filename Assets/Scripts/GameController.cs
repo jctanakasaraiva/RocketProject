@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    Vector3 playerSpawnPosition = new Vector3(-0.4742927f, -8.06973f, 0);
     float TimerToInstance;
     public int totalScore;
     public Text scoreText;
@@ -15,8 +12,8 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
 
-    public GameObject satellite;
-    public GameObject player;
+    public GameObject satellitePrefab;
+    public GameObject playerPrefab;
     void Start()
     {
         instance = this;
@@ -39,22 +36,24 @@ public class GameController : MonoBehaviour
     {
         if (totalInstancedItems < 0 & TimerToInstance <= 0)
         {
-            GameObject invokeItem = Instantiate(satellite);
+            GameObject invokeItem = Instantiate(satellitePrefab);
             invokeItem.transform.position = new Vector3(Random.Range(-19, 19), Random.Range(-5, 9), 0);
             totalInstancedItems++;
             TimerToInstance = 2;
         }
     }
 
-    void TimerToInstanceCountDown(){
+    void TimerToInstanceCountDown()
+    {
         TimerToInstance -= Time.deltaTime;
     }
 
-    void InstanceNewPlayer(){
+    void InstanceNewPlayer()
+    {
         if (Input.GetKeyDown(KeyCode.N))
         {
-            GameObject invokePlayer = Instantiate(player);
-            invokePlayer.transform.position = new Vector3(-0.4742927f, -8.06973f, 0);
+            GameObject invokePlayer = Instantiate(playerPrefab);
+            invokePlayer.transform.position = playerSpawnPosition; // new Vector3(-0.4742927f, -8.06973f, 0);
         }
     }
 }
