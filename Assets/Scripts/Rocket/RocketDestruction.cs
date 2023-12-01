@@ -17,14 +17,6 @@ public class RocketDestruction : MonoBehaviour
 
     [SerializeField] private Animator explosionAnimator;
 
-
-
-    private void OnCollisionEnter2D(Collision2D collider) {
-        if(collider.gameObject.tag == "Platform"){
-            Debug.Log("On platform");
-        }
-    }
-
     public void RocketExplosion()
     {
         //isDead = true;

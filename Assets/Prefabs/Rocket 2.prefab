@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 1760005489}
   - component: {fileID: 2609437715199178920}
   - component: {fileID: 1889727316}
+  - component: {fileID: 8076139027461167928}
   m_Layer: 0
   m_Name: LandingGear
   m_TagString: Untagged
@@ -297,6 +298,18 @@ MonoBehaviour:
   landingGearActivate: 1
   animator: {fileID: 1760005489}
   polygonCollider2D: {fileID: 2609437715199178920}
+--- !u!114 &8076139027461167928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760005488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb52f01ed49df20449ad33a34e208d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &775888181164356217
 GameObject:
   m_ObjectHideFlags: 0
