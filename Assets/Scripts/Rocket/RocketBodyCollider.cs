@@ -10,8 +10,15 @@ public class RocketBodyCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.gameObject.tag != "Item" && rocketStatusControl.isDead == false)
+        {
+            rocketDestruction.RocketExplosion();
+        }
+    }
 
-        if (collider.gameObject.tag == "Edges" && rocketStatusControl.isDead == false)
+    private void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.tag != "Item" && rocketStatusControl.isDead == false)
         {
             rocketDestruction.RocketExplosion();
         }
