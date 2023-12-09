@@ -5,8 +5,12 @@ public class GameController : MonoBehaviour
 {
     Vector3 playerSpawnPosition = new Vector3(-0.4742927f, -8.06973f, 0);
     float TimerToInstance;
+
     public int totalScore;
     public Text scoreText;
+
+    public int rocketAngle;
+    public Text rocketAngleText;
 
     public int totalInstancedItems;
 
@@ -25,6 +29,7 @@ public class GameController : MonoBehaviour
         RandomInstanceItems();
         TimerToInstanceCountDown();
         InstanceNewPlayer();
+        UpdateRocketAngle();
     }
 
     public void UpdateScoreText()
@@ -32,9 +37,14 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString();
     }
 
+    void UpdateRocketAngle()
+    {
+        rocketAngleText.text = rocketAngle.ToString();
+    }
+
     void RandomInstanceItems()
     {
-        if (totalInstancedItems < 0 & TimerToInstance <= 0)
+        if (totalInstancedItems < 1  & TimerToInstance <= 0)
         {
             GameObject invokeItem = Instantiate(satellitePrefab);
             invokeItem.transform.position = new Vector3(Random.Range(-19, 19), Random.Range(-5, 9), 0);

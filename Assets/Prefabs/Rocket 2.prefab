@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 6620731574936575794}
   m_Layer: 0
   m_Name: RocketBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -789,12 +789,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterInput: 0
-  screenRocketAngle: {fileID: 0}
   thrustMultiplier: 5
   reverseThrustMultiplier: 5
-  vernierThrusterMultiplier: 2
-  RocketVerticalMaxSpeed: 4
+  vernierThrusterMultiplier: 1
+  rocketVerticalMaxSpeed: 4
+  rocketHorizontalMaxSpeed: 5
   rotationSpeed: 1
+  rocketAngleValue: 0
   dragValue: 1
   dragTime: 3
   rocketRigidBody2D: {fileID: 3122752173530501951}

@@ -8,21 +8,22 @@ public class NewRocketControl : MonoBehaviour
     private float steeringInput;
     private float rotationAngle;
 
-    private float rocketFuel = 100f;
-    private float vernierFuel = 100f;
-
-    [SerializeField] private Text screenRocketAngle;
+    //private float rocketFuel = 100f;
+    //private float vernierFuel = 100f;
 
     public float thrustMultiplier;
     public float reverseThrustMultiplier;
     public float vernierThrusterMultiplier;
 
     private float rocketUpVelocity;
+    private float rocketRightVelocity;
 
-    public float RocketVerticalMaxSpeed;
-    public float RocketHorizontalMaxSpeed;
+    public float rocketVerticalMaxSpeed;
+    public float rocketHorizontalMaxSpeed;
 
     public float rotationSpeed;
+
+    public float rocketAngleValue;
 
     public float dragValue;
     public float dragTime;
@@ -43,10 +44,16 @@ public class NewRocketControl : MonoBehaviour
     private void ApplyRocketThrust()
     {
         rocketUpVelocity = Vector2.Dot(transform.up, rocketRigidBody2D.velocity);
-        if (rocketUpVelocity > RocketVerticalMaxSpeed && thrusterInput > 0)
+        if (rocketUpVelocity > rocketVerticalMaxSpeed && thrusterInput > 0)
         {
             return;
         }
+        if (rocketRightVelocity > rocketHorizontalMaxSpeed && thrusterInput > 0)
+        {
+            rocketRightVelocity = rocketHorizontalMaxSpeed;
+            return;
+        }
+        rocketRightVelocity = Vector2.Dot(transform.right, rocketRigidBody2D.velocity);
         Vector2 thrustForce = new Vector2(0, 0);
         float landingGearSpeed = landingGearController.landingGearSpeed;
         if (thrusterInput > 0)
@@ -100,11 +107,12 @@ public class NewRocketControl : MonoBehaviour
         int rocketAngle = (int)transform.rotation.eulerAngles.z;
         if (rocketAngle < 180)
         {
-            screenRocketAngle.text = (-rocketAngle).ToString() + "°";
+            GameController.instance.rocketAngle = -rocketAngle;
         }
         else
         {
-            screenRocketAngle.text = (360 - rocketAngle).ToString() + "°";
+            GameController.instance.rocketAngle = 360 - rocketAngle;
         }
+
     }
 }
