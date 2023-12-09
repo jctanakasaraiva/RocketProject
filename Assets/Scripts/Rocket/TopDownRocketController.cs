@@ -7,8 +7,6 @@ public class TopDownRocketController : MonoBehaviour
     public float accelerationFactor = 30.0f;
     public float turnFactor = 3.5f;
     public float maxSpeed = 4f;
-    [Range(0.1f, 1f)]
-    public float landingGearFactor;
     private float landingGearSpeed;
     public float accelerationInput = 0;
     private float steeringInput = 0;
@@ -20,8 +18,6 @@ public class TopDownRocketController : MonoBehaviour
 
     void FixedUpdate()
     {
-        LandingGearForce();
-
         ApplyEngineForce();
 
         KillOrthogonalVelocity();
@@ -29,16 +25,8 @@ public class TopDownRocketController : MonoBehaviour
         ApplySteering();
     }
 
-    void LandingGearForce()
-    {
-        if (landingGearController.landingGearActivate)
-        {
-            landingGearSpeed = landingGearFactor;
-        }
-        else
-        {
-            landingGearSpeed = 1f;
-        }
+    void updateLandingGearSpeed(){
+        landingGearSpeed = landingGearController.landingGearSpeed;
     }
 
     void ApplyEngineForce()

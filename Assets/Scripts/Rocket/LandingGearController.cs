@@ -13,6 +13,9 @@ public class LandingGearController : MonoBehaviour
 
     public PolygonCollider2D polygonCollider2D;
 
+    [Range(0.1f, 1f)]
+    public float landingGearFactor;
+
     void Start()
     {
         animator.SetBool("LandingGearOff", landingGearActivate);
@@ -23,6 +26,7 @@ public class LandingGearController : MonoBehaviour
     void Update()
     {
         LandingGearInputControl();
+        LandingGearSpeedUpdate();
     }
 
     void LandingGearInputControl()
@@ -34,6 +38,18 @@ public class LandingGearController : MonoBehaviour
             animator.SetBool("LandingGearOff", landingGearActivate);
 
             polygonCollider2D.enabled = landingGearActivate;
+        }
+    }
+
+    void LandingGearSpeedUpdate()
+    {
+        if (landingGearActivate)
+        {
+            landingGearSpeed = landingGearFactor;
+        }
+        else
+        {
+            landingGearSpeed = 1f;
         }
     }
 }

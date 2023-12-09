@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485030244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.42, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.8697495, y: 4.8697495, z: 4.8697495}
   m_Children: []
   m_Father: {fileID: 2192425904425994481}
@@ -294,10 +294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156ef6f7087f63a42bf317c3295a1749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landingGearSpeed: 0
+  landingGearSpeed: 1
   landingGearActivate: 1
   animator: {fileID: 1760005489}
   polygonCollider2D: {fileID: 2609437715199178920}
+  landingGearFactor: 0.6
 --- !u!114 &8076139027461167928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb52f01ed49df20449ad33a34e208d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlatform: 0
 --- !u!1 &775888181164356217
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +534,8 @@ GameObject:
   - component: {fileID: 2192425904004054143}
   - component: {fileID: 2192425904004054016}
   - component: {fileID: 2192425904004054017}
+  - component: {fileID: 565028565}
+  - component: {fileID: 7913711527478605783}
   m_Layer: 0
   m_Name: Thruster 2
   m_TagString: Untagged
@@ -623,87 +627,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &2192425904425994483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2192425904425994481}
-  - component: {fileID: 2192425904425994479}
-  - component: {fileID: 2192425904425994480}
-  - component: {fileID: 8654078838389443884}
-  - component: {fileID: 1440985931}
-  - component: {fileID: 3122752173530501951}
-  - component: {fileID: 7494780642074617135}
-  - component: {fileID: 8177052577059186731}
-  m_Layer: 0
-  m_Name: Rocket 2
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2192425904425994481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2192425904425994483}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.58, y: -1, z: 0}
-  m_LocalScale: {x: 0.3686432, y: 0.3686432, z: 0.3686432}
-  m_Children:
-  - {fileID: 4250619166075554806}
-  - {fileID: 2192425904004054143}
-  - {fileID: 1760005491}
-  - {fileID: 485030247}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2192425904425994479
+--- !u!114 &565028565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2192425904425994483}
+  m_GameObject: {fileID: 2192425904004054018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af70ce6182f88d41b5bf7fce3652fe7, type: 3}
+  m_Script: {fileID: 11500000, guid: c67f2fe5cfbe546418bb2303ae2c7acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2192425904425994480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2192425904425994483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f693b8325280843a48e13af2524604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  driftFactor: 0.95
-  accelerationFactor: 70
-  turnFactor: 6
-  maxSpeed: 5
-  landingGearFactor: 0.6
-  accelerationInput: 0
-  thruster: {fileID: 2192425904004054018}
-  rocketRigidBody2D: {fileID: 3122752173530501951}
-  landingGearController: {fileID: 1889727316}
---- !u!82 &8654078838389443884
+  newRocketControl: {fileID: 6727565906138614696}
+  spriteRenderer: {fileID: 2192425904004054016}
+  engineAudio: {fileID: 7913711527478605783}
+--- !u!82 &7913711527478605783
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2192425904425994483}
+  m_GameObject: {fileID: 2192425904004054018}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -793,7 +738,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1440985931
+--- !u!1 &2192425904425994483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2192425904425994481}
+  - component: {fileID: 6727565906138614696}
+  - component: {fileID: 3122752173530501951}
+  - component: {fileID: 7494780642074617135}
+  - component: {fileID: 8177052577059186731}
+  m_Layer: 0
+  m_Name: Rocket 2
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2192425904425994481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192425904425994483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.58, y: -1, z: 0}
+  m_LocalScale: {x: 0.3686432, y: 0.3686432, z: 0.3686432}
+  m_Children:
+  - {fileID: 4250619166075554806}
+  - {fileID: 2192425904004054143}
+  - {fileID: 1760005491}
+  - {fileID: 485030247}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6727565906138614696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -802,11 +785,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2192425904425994483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3584f1be9892224f8117a7ec9d1b04b, type: 3}
+  m_Script: {fileID: 11500000, guid: ccfb5c28bb4cea148862d9c47a9e1028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topDownRocketController: {fileID: 2192425904425994480}
-  engineAudio: {fileID: 8654078838389443884}
+  thrusterInput: 0
+  screenRocketAngle: {fileID: 0}
+  thrustMultiplier: 5
+  reverseThrustMultiplier: 5
+  vernierThrusterMultiplier: 2
+  RocketVerticalMaxSpeed: 4
+  rotationSpeed: 1
+  dragValue: 1
+  dragTime: 3
+  rocketRigidBody2D: {fileID: 3122752173530501951}
+  landingGearController: {fileID: 1889727316}
 --- !u!50 &3122752173530501951
 Rigidbody2D:
   serializedVersion: 4
@@ -819,10 +811,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.1
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
