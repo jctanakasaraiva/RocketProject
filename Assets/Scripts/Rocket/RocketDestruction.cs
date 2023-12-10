@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RocketDestruction : MonoBehaviour
 {
-    //bool isDead = false;
-
     [SerializeField] AudioSource explosionAudio;
 
     [SerializeField] private Rigidbody2D rocketRigidBody2D;
@@ -19,7 +17,6 @@ public class RocketDestruction : MonoBehaviour
 
     public void RocketExplosion()
     {
-        //isDead = true;
         explosionAudio.Play();
         Vector2 deadVelocity = new Vector2(0f, 0f);
         rocketRigidBody2D.velocity = deadVelocity;

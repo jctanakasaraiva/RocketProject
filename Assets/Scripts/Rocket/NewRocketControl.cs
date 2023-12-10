@@ -8,7 +8,6 @@ public class NewRocketControl : MonoBehaviour
     private float steeringInput;
     private float rotationAngle;
 
-    //private float rocketFuel = 100f;
     //private float vernierFuel = 100f;
 
     public float thrustMultiplier;

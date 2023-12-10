@@ -12,12 +12,16 @@ public class GameController : MonoBehaviour
     public int rocketAngle;
     public Text rocketAngleText;
 
+    public Text rocketFuelText;
+
     public int totalInstancedItems;
 
     public static GameController instance;
 
     public GameObject satellitePrefab;
     public GameObject playerPrefab;
+
+    [SerializeField] RocketFuelControl rocketFuelControl;
     void Start()
     {
         instance = this;
@@ -44,7 +48,7 @@ public class GameController : MonoBehaviour
 
     void RandomInstanceItems()
     {
-        if (totalInstancedItems < 1  & TimerToInstance <= 0)
+        if (totalInstancedItems < 1 & TimerToInstance <= 0)
         {
             GameObject invokeItem = Instantiate(satellitePrefab);
             invokeItem.transform.position = new Vector3(Random.Range(-19, 19), Random.Range(-5, 9), 0);
@@ -62,8 +66,11 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
+            rocketFuelControl.rocketFuelValue = 100;
             GameObject invokePlayer = Instantiate(playerPrefab);
             invokePlayer.transform.position = playerSpawnPosition; // new Vector3(-0.4742927f, -8.06973f, 0);
+            rocketFuelControl.rocketFuelValue = 100;
+            rocketFuelControl.RocketFuelSliderUpdate();
         }
     }
 }

@@ -788,6 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfb5c28bb4cea148862d9c47a9e1028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   thrusterInput: 0
   thrustMultiplier: 5
   reverseThrustMultiplier: 5
