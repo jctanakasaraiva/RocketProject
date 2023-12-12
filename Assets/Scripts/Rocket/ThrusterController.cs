@@ -8,32 +8,29 @@ public class ThrusterController : MonoBehaviour
 
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    private float thrusterInput;
-
     [SerializeField] AudioSource engineAudio;
+
+    //private float thrusterInput;
 
     // Update is called once per frame
     void Update()
     {
-        SetInputVector();
-        PlayThrusterSound();
+        //SetThruster();
+        //PlayThrusterSound();
     }
 
-    void SetInputVector()
+    public void SetThruster(float thrusterInput)
     {
-        thrusterInput = newRocketControl.thrusterInput;
-        if (thrusterInput != 0)
+        //thrusterInput = newRocketControl.thrusterInput;
+        if (thrusterInput > 0)
         {
             spriteRenderer.enabled = true;
-
         }
         else
         {
             spriteRenderer.enabled = false;
         }
-    }
 
-    void PlayThrusterSound(){
         if (thrusterInput > 0.5 && engineAudio.isPlaying == false)
         {
             engineAudio.Play();
@@ -42,5 +39,18 @@ public class ThrusterController : MonoBehaviour
         {
             engineAudio.Stop();
         }
+
     }
+    /*
+        void PlayThrusterSound(){
+            if (thrusterInput > 0.5 && engineAudio.isPlaying == false)
+            {
+                engineAudio.Play();
+            }
+            if (thrusterInput <= 0.5 && engineAudio.isPlaying == true)
+            {
+                engineAudio.Stop();
+            }
+        }
+        */
 }

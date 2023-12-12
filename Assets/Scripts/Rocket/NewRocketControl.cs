@@ -31,7 +31,11 @@ public class NewRocketControl : MonoBehaviour
 
     [SerializeField] private LandingGearController landingGearController;
 
-    void Update()
+    [SerializeField] private RocketDestruction rocketDestruction;
+
+    [SerializeField] private ThrusterController thrusterController;
+
+    private void FixedUpdate()
     {
         SetInput();
         ApplyRocketThrust();
@@ -84,11 +88,11 @@ public class NewRocketControl : MonoBehaviour
     private void ApplyRocketVernierThruster()
     {
         Vector2 vernierThruster = new Vector2(0, 0);
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.E))
         {
             vernierThruster = transform.right * -vernierThrusterMultiplier;
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Q))
         {
             vernierThruster = transform.right * vernierThrusterMultiplier;
         }
@@ -97,8 +101,12 @@ public class NewRocketControl : MonoBehaviour
 
     private void SetInput()
     {
-        thrusterInput = Input.GetAxis("Vertical");
-        steeringInput = Input.GetAxis("Horizontal");
+        if (rocketDestruction.isAlive)
+        {
+            thrusterInput = Input.GetAxis("Vertical");
+            steeringInput = Input.GetAxis("Horizontal");
+            thrusterController.SetThruster(thrusterInput);
+        }
     }
 
     private void UpdateScreenRocketAngle()

@@ -17,7 +17,7 @@ public class RocketFuelControl : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") > 0)
         {
-            rocketFuelValue -= rocketFuelValue * Time.deltaTime * rocketFuelMultiplier;
+            rocketFuelValue = rocketFuelValue - Time.deltaTime * rocketFuelMultiplier;
             RocketFuelSliderUpdate();
         }
 
