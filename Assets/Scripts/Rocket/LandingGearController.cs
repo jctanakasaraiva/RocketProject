@@ -13,6 +13,8 @@ public class LandingGearController : MonoBehaviour
 
     public PolygonCollider2D polygonCollider2D;
 
+    [SerializeField] AudioSource landingGearSound;
+
     [Range(0.1f, 1f)]
     public float landingGearFactor;
 
@@ -34,6 +36,8 @@ public class LandingGearController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             landingGearActivate = !landingGearActivate;
+
+            landingGearSound.Play();
 
             animator.SetBool("LandingGearOff", landingGearActivate);
 
