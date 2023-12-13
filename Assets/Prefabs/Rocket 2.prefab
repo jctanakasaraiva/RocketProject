@@ -293,7 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156ef6f7087f63a42bf317c3295a1749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landingGearSpeed: 0
   landingGearActivate: 1
   animator: {fileID: 1760005489}
   polygonCollider2D: {fileID: 2609437715199178920}
@@ -521,7 +520,9 @@ MonoBehaviour:
   turnFactor: 6
   maxSpeed: 5
   landingGearFactor: 0.6
+ FixLandindGearAnimation
   accelerationInput: 0
+ main
   thruster: {fileID: 2192425904004054018}
   rocketRigidBody2D: {fileID: 2192425904425994478}
   rocketGameObject: {fileID: 2192425904425994483}
