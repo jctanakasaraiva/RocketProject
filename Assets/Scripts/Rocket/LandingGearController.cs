@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class LandingGearController : MonoBehaviour
 {
-
-    public float landingGearSpeed;
-
     public bool landingGearActivate = true;
 
     public Animator animator;
