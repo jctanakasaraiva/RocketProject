@@ -10,7 +10,7 @@ public class NewRocketControl : MonoBehaviour
 
     //private float vernierFuel = 100f;
 
-    public float thrustMultiplier;
+    [SerializeField] private float thrustMultiplier;
     public float reverseThrustMultiplier;
     public float vernierThrusterMultiplier;
 
