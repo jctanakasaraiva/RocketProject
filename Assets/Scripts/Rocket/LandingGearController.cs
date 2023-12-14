@@ -15,6 +15,8 @@ public class LandingGearController : MonoBehaviour
     [Range(0.1f, 1f)]
     public float landingGearFactor;
 
+    public float landingGearSpeed;
+
     void Start()
     {
         animator.SetBool("LandingGearOff", landingGearActivate);
