@@ -27,6 +27,8 @@ public class NewRocketControl : MonoBehaviour
     public float dragValue;
     public float dragTime;
 
+    public float VernierThrusterSignal;
+
     [SerializeField] private Rigidbody2D rocketRigidBody2D;
 
     [SerializeField] private LandingGearController landingGearController;
@@ -96,6 +98,7 @@ public class NewRocketControl : MonoBehaviour
         {
             vernierThruster = transform.right * vernierThrusterMultiplier;
         }
+        VernierThrusterSignal = vernierThruster.normalized.x;
         rocketRigidBody2D.AddForce(vernierThruster, ForceMode2D.Force);
     }
 
