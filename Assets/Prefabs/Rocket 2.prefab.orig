@@ -294,10 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156ef6f7087f63a42bf317c3295a1749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   landingGearSpeed: 1
-=======
->>>>>>> main
   landingGearActivate: 1
   animator: {fileID: 1760005489}
   polygonCollider2D: {fileID: 2609437715199178920}
@@ -653,8 +650,12 @@ MonoBehaviour:
   turnFactor: 6
   maxSpeed: 5
   landingGearFactor: 0.6
+ FixLandindGearAnimation
+  accelerationInput: 0
+ main
   thruster: {fileID: 2192425904004054018}
-  engineAudio: {fileID: 8654078838389443884}
+  rocketRigidBody2D: {fileID: 2192425904425994478}
+  rocketGameObject: {fileID: 2192425904425994483}
   landingGearController: {fileID: 1889727316}
 --- !u!50 &2192425904425994478
 Rigidbody2D:
@@ -694,7 +695,7 @@ CapsuleCollider2D:
   m_Size: {x: 2.3803139, y: 7.226203}
   m_Direction: 0
 --- !u!82 &8654078838389443884
->>>>>>> main
+>>>>>>> FixLandindGearAnimation
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
