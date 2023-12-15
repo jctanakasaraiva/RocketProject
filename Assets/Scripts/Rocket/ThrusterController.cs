@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ThrusterController : MonoBehaviour
@@ -10,20 +10,29 @@ public class ThrusterController : MonoBehaviour
 
     [SerializeField] AudioSource engineAudio;
 
-    //private float thrusterInput;
-
-    // Update is called once per frame
-    void Update()
-    {
-        //SetThruster();
-        //PlayThrusterSound();
-    }
+    [SerializeField] float thrusterAngle;
+    [SerializeField] float thrusterXPosition;
 
     public void SetThruster(float thrusterInput)
     {
-        //thrusterInput = newRocketControl.thrusterInput;
-        if (thrusterInput > 0)
+        if (thrusterInput != 0)
         {
+
+            if (newRocketControl.steeringInput > 0)
+            {
+                transform.localPosition = new Vector3(thrusterXPosition, transform.localPosition.y, transform.localPosition.z);
+                transform.localRotation = Quaternion.Euler(0, 0, thrusterAngle);
+            }
+            if (newRocketControl.steeringInput < 0)
+            {
+                transform.localPosition = new Vector3(-thrusterXPosition, transform.localPosition.y, transform.localPosition.z);
+                transform.localRotation = Quaternion.Euler(0, 0, -thrusterAngle);
+            }
+            if (newRocketControl.steeringInput == 0)
+            {
+                transform.localPosition = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
             spriteRenderer.enabled = true;
         }
         else
@@ -39,18 +48,5 @@ public class ThrusterController : MonoBehaviour
         {
             engineAudio.Stop();
         }
-
     }
-    /*
-        void PlayThrusterSound(){
-            if (thrusterInput > 0.5 && engineAudio.isPlaying == false)
-            {
-                engineAudio.Play();
-            }
-            if (thrusterInput <= 0.5 && engineAudio.isPlaying == true)
-            {
-                engineAudio.Stop();
-            }
-        }
-        */
 }

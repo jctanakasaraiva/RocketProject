@@ -10,7 +10,6 @@ public class VernierThursterControl : MonoBehaviour
 
     [SerializeField] AudioSource vernierThrusterSound;
 
-
     [SerializeField] SpriteRenderer vernierThrusterSpriteRenderer;
 
     private void Update()
@@ -33,7 +32,6 @@ public class VernierThursterControl : MonoBehaviour
                 vernierThrusterSound.Play();
             }
         }
-
         if (newRocketControl.VernierThrusterSignal < 0 && vernierThrusterSpriteRenderer.flipX == false)
         {
             transform.localPosition = new Vector3(transform.localPosition.x * -1, transform.localPosition.y, transform.localPosition.z);
@@ -45,5 +43,4 @@ public class VernierThursterControl : MonoBehaviour
             vernierThrusterSpriteRenderer.flipX = false;
         }
     }
-
 }

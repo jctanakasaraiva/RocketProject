@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class NewRocketControl : MonoBehaviour
 {
     public float thrusterInput;
-    private float steeringInput;
+    public float steeringInput;
     private float rotationAngle;
 
     //private float vernierFuel = 100f;
@@ -77,7 +77,6 @@ public class NewRocketControl : MonoBehaviour
         {
             rocketRigidBody2D.drag = 0;
         }
-
         rocketRigidBody2D.AddForce(thrustForce, ForceMode2D.Force);
     }
 
@@ -123,6 +122,5 @@ public class NewRocketControl : MonoBehaviour
         {
             GameController.instance.rocketAngle = 360 - rocketAngle;
         }
-
     }
 }
