@@ -529,6 +529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onPlatform: 0
+  rocketStatusControl: {fileID: 8177052577059186731}
+  rocketDestruction: {fileID: 7494780642074617135}
 --- !u!82 &51990082
 AudioSource:
   m_ObjectHideFlags: 0
@@ -955,6 +957,8 @@ MonoBehaviour:
   newRocketControl: {fileID: 6727565906138614696}
   spriteRenderer: {fileID: 2192425904004054016}
   engineAudio: {fileID: 7913711527478605783}
+  thrusterAngle: 15
+  thrusterXPosition: 0.25
 --- !u!82 &7913711527478605783
 AudioSource:
   m_ObjectHideFlags: 0

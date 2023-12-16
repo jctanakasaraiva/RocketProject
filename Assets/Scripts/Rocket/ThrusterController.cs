@@ -15,7 +15,7 @@ public class ThrusterController : MonoBehaviour
 
     public void SetThruster(float thrusterInput)
     {
-        if (thrusterInput != 0)
+        if (thrusterInput >= 0)
         {
 
             if (newRocketControl.steeringInput > 0)
