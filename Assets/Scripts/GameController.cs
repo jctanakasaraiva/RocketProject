@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    Vector3 playerSpawnPosition = new Vector3(-0.4742927f, -8.06973f, 0);
     float TimerToInstance;
 
     public int totalScore;
@@ -22,6 +21,10 @@ public class GameController : MonoBehaviour
     public GameObject playerPrefab;
 
     [SerializeField] RocketFuelControl rocketFuelControl;
+    [SerializeField] Transform platformTransform;
+
+    Vector3 playerSpawnPosition;
+
     void Start()
     {
         instance = this;
@@ -66,10 +69,10 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
+            playerSpawnPosition = new Vector3(0, platformTransform.position.y + 2.13f, 0);
             rocketFuelControl.rocketFuelValue = 100;
             GameObject invokePlayer = Instantiate(playerPrefab);
-            invokePlayer.transform.position = playerSpawnPosition; // new Vector3(-0.4742927f, -8.06973f, 0);
-            rocketFuelControl.rocketFuelValue = 100;
+            invokePlayer.transform.position = playerSpawnPosition;
             rocketFuelControl.RocketFuelSliderUpdate();
         }
     }

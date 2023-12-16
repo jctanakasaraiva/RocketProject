@@ -82,8 +82,16 @@ public class NewRocketControl : MonoBehaviour
 
     private void ApplyRocketSteering()
     {
-        rotationAngle -= steeringInput * rotationSpeed;
-        rocketRigidBody2D.MoveRotation(rotationAngle);
+        if (thrusterInput > 0)
+        {
+            rotationAngle -= steeringInput * rotationSpeed;
+            rocketRigidBody2D.MoveRotation(rotationAngle);
+        }
+        else
+        {
+            rotationAngle = rocketRigidBody2D.rotation;
+        }
+
     }
 
     private void ApplyRocketVernierThruster()
