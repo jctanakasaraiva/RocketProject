@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -5
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 7dd24e7fda6ad314495acb3a888bb79a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -95,4 +95,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a2d1d382145514da6f470c8fd71da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxSpeed: 2
+  waves: {fileID: 3182421587957140909}
+  parallaxSpeed: -2
