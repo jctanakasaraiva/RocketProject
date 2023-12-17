@@ -3,26 +3,18 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
     float TimerToInstance;
-
     public int totalScore;
     public Text scoreText;
-
     public int rocketAngle;
     public Text rocketAngleText;
-
     public Text rocketFuelText;
-
+    public float rocketVernierFuel;
     public int totalInstancedItems;
-
-    public static GameController instance;
-
     public GameObject satellitePrefab;
     public GameObject playerPrefab;
-
-    [SerializeField] RocketFuelControl rocketFuelControl;
     [SerializeField] Transform platformTransform;
-
     Vector3 playerSpawnPosition;
 
     void Start()
@@ -37,6 +29,7 @@ public class GameController : MonoBehaviour
         TimerToInstanceCountDown();
         InstanceNewPlayer();
         UpdateRocketAngle();
+        UpdateScoreText();
     }
 
     public void UpdateScoreText()
@@ -70,10 +63,9 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             playerSpawnPosition = new Vector3(0, platformTransform.position.y + 2.13f, 0);
-            rocketFuelControl.rocketFuelValue = 100;
+            NewRocketControl.instance.rocketFuelValue = 100;
             GameObject invokePlayer = Instantiate(playerPrefab);
             invokePlayer.transform.position = playerSpawnPosition;
-            rocketFuelControl.RocketFuelSliderUpdate();
         }
     }
 }

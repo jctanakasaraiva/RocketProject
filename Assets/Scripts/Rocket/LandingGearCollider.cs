@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LandingGearCollider : MonoBehaviour
@@ -7,7 +5,6 @@ public class LandingGearCollider : MonoBehaviour
     public bool onPlatform;
 
     [SerializeField] private RocketStatusControl rocketStatusControl;
-    [SerializeField] private RocketDestruction rocketDestruction;
 
     private void OnCollisionEnter2D(Collision2D collider)
     {
@@ -15,7 +12,13 @@ public class LandingGearCollider : MonoBehaviour
 
         if (collider.gameObject.tag != "Item" && onPlatform == false && rocketStatusControl.isDead == false)
         {
-            rocketDestruction.RocketExplosion();
+            RocketDestruction.instance.RocketExplosion();
+        }
+
+        if (collider.gameObject.tag == "Platform")
+        {
+            NewRocketControl.instance.rocketFuelValue = 100f;
+            VernierThrusterControl.instance.vernierThrusterFuel = 100f;
         }
     }
 }

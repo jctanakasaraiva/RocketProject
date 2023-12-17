@@ -113,8 +113,8 @@ GameObject:
   - component: {fileID: 1325020538}
   - component: {fileID: 1325020537}
   - component: {fileID: 1325020536}
-  - component: {fileID: 1515511844044896823}
   - component: {fileID: 1325020540}
+  - component: {fileID: 553909940}
   m_Layer: 0
   m_Name: VernierThuster
   m_TagString: Untagged
@@ -206,21 +206,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1515511844044896823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325020535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a4697ddb27cc74c9a19de95ef04ffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newRocketControl: {fileID: 6727565906138614696}
-  vernierThrusterSound: {fileID: 1325020540}
-  vernierThrusterSpriteRenderer: {fileID: 1325020537}
 --- !u!82 &1325020540
 AudioSource:
   m_ObjectHideFlags: 0
@@ -317,6 +302,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &553909940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325020535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a4697ddb27cc74c9a19de95ef04ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newRocketControl: {fileID: 6727565906138614696}
+  vernierThrusterSound: {fileID: 1325020540}
+  vernierThrusterSpriteRenderer: {fileID: 1325020537}
+  vernierThrusterFuel: 100
+  vernierThrusterMultiplier: 1
 --- !u!1 &1760005488
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onPlatform: 0
   rocketStatusControl: {fileID: 8177052577059186731}
-  rocketDestruction: {fileID: 7494780642074617135}
 --- !u!82 &51990082
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1127,9 +1128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfb5c28bb4cea148862d9c47a9e1028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
   thrusterInput: 0
   steeringInput: 0
-  thrustMultiplier: 50
+  thrustMultiplier: 30
+  rocketFuelValue: 50
+  rocketFuelMultiplier: 5
   reverseThrustMultiplier: 5
   vernierThrusterMultiplier: 3
   rocketVerticalMaxSpeed: 4
@@ -1143,6 +1147,7 @@ MonoBehaviour:
   landingGearController: {fileID: 1889727316}
   rocketDestruction: {fileID: 7494780642074617135}
   thrusterController: {fileID: 565028565}
+  vernierThrusterControl: {fileID: 553909940}
 --- !u!114 &7494780642074617135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,7 +1160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423ba563c09bb1e43ab6f02ed0e9fd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlive: 1
   explosionAudio: {fileID: 5449500763315319800}
   rocketRigidBody2D: {fileID: 3122752173530501951}
   rocketSpriteRenderer: {fileID: 8348322856440771800}
