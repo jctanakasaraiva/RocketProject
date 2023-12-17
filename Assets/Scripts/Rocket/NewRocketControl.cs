@@ -76,7 +76,6 @@ public class NewRocketControl : MonoBehaviour
             }
             rocketRigidBody2D.AddForce(thrustForce, ForceMode2D.Force);
         }
-
     }
 
     private void ApplyRocketSteering()
@@ -89,41 +88,41 @@ public class NewRocketControl : MonoBehaviour
         else
         {
             rotationAngle = rocketRigidBody2D.rotation;
+            rocketRigidBody2D.MoveRotation(rotationAngle);
         }
-
     }
 
     private void ApplyRocketVernierThruster()
     {
-        //if (isAlive)
-        //{
-        float fuelValue = vernierThrusterControl.vernierThrusterFuel;
-        if (fuelValue > 0)
+        if (isAlive)
         {
-            Vector2 vernierThruster = new Vector2(0, 0);
-            if (Input.GetKey(KeyCode.E))
+            float fuelValue = vernierThrusterControl.vernierThrusterFuel;
+            if (fuelValue > 0)
             {
-                vernierThruster = transform.right * -vernierThrusterMultiplier;
-                VernierThrusterSignal = vernierThruster.normalized.x;
-                vernierThrusterControl.EnableVernierThruster();
+                Vector2 vernierThruster = new Vector2(0, 0);
+                if (Input.GetKey(KeyCode.E))
+                {
+                    vernierThruster = transform.right * -vernierThrusterMultiplier;
+                    VernierThrusterSignal = vernierThruster.normalized.x;
+                    vernierThrusterControl.EnableVernierThruster();
+                }
+                if (Input.GetKey(KeyCode.Q))
+                {
+                    vernierThruster = transform.right * vernierThrusterMultiplier;
+                    VernierThrusterSignal = vernierThruster.normalized.x;
+                    vernierThrusterControl.EnableVernierThruster();
+                }
+                if (Input.GetKey(KeyCode.Q) == false && Input.GetKey(KeyCode.E) == false)
+                {
+                    vernierThrusterControl.DisableVernierThruster();
+                }
+                rocketRigidBody2D.AddForce(vernierThruster, ForceMode2D.Force);
             }
-            if (Input.GetKey(KeyCode.Q))
-            {
-                vernierThruster = transform.right * vernierThrusterMultiplier;
-                VernierThrusterSignal = vernierThruster.normalized.x;
-                vernierThrusterControl.EnableVernierThruster();
-            }
-            if (Input.GetKey(KeyCode.Q) == false && Input.GetKey(KeyCode.E) == false)
+            else
             {
                 vernierThrusterControl.DisableVernierThruster();
             }
-            rocketRigidBody2D.AddForce(vernierThruster, ForceMode2D.Force);
         }
-        else
-        {
-            vernierThrusterControl.DisableVernierThruster();
-        }
-        //}
     }
 
     private void SetInput()

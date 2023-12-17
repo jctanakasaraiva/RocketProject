@@ -6,6 +6,7 @@ public class RocketBarController : MonoBehaviour
     public Image rocketFuelBarFill;
     public float rocketBarValue;
     [SerializeField] AudioSource FuelAlertSound;
+    public Gradient gradient;
 
     void Update()
     {
@@ -21,14 +22,18 @@ public class RocketBarController : MonoBehaviour
             vernierBarScale.y = rocketBarValue / 100;
             rocketFuelBarFill.rectTransform.localScale = vernierBarScale;
         }
-        if(rocketBarValue <= 30 && FuelAlertSound.isPlaying == false){
+        if (rocketBarValue <= 30 && FuelAlertSound.isPlaying == false)
+        {
             FuelAlertSound.Play();
         }
-        if(rocketBarValue > 30 && FuelAlertSound.isPlaying){
+        if (rocketBarValue > 30 && FuelAlertSound.isPlaying)
+        {
             FuelAlertSound.Stop();
         }
-        if(rocketBarValue <= 0){
+        if (rocketBarValue <= 0)
+        {
             RocketDestruction.instance.RocketExplosion();
         }
+        rocketFuelBarFill.color = gradient.Evaluate(rocketBarValue / 100);
     }
 }
