@@ -102,223 +102,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1325020535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1325020538}
-  - component: {fileID: 1325020537}
-  - component: {fileID: 1325020536}
-  - component: {fileID: 1325020540}
-  - component: {fileID: 553909940}
-  m_Layer: 0
-  m_Name: VernierThuster
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1325020538
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325020535}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.92, y: 1.95, z: 0}
-  m_LocalScale: {x: 0.5333935, y: 0.41261408, z: 1.1532832}
-  m_Children: []
-  m_Father: {fileID: 2192425904425994481}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1325020537
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325020535}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 39ecd00417225c24295487553785428f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!95 &1325020536
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325020535}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc327709596d8ec49a0a398cdc3670fd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &1325020540
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325020535}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 55272ff57ce06af46a42d2d6b0770c06, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.7
-  m_Pitch: 1.3
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &553909940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325020535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a4697ddb27cc74c9a19de95ef04ffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newRocketControl: {fileID: 6727565906138614696}
-  vernierThrusterSound: {fileID: 1325020540}
-  vernierThrusterSpriteRenderer: {fileID: 1325020537}
-  vernierThrusterFuel: 100
-  vernierThrusterMultiplier: 15
 --- !u!1 &1760005488
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +116,6 @@ GameObject:
   - component: {fileID: 2609437715199178920}
   - component: {fileID: 1889727316}
   - component: {fileID: 8076139027461167928}
-  - component: {fileID: 51990082}
   m_Layer: 0
   m_Name: LandingGear
   m_TagString: Untagged
@@ -512,12 +294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156ef6f7087f63a42bf317c3295a1749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  landingGearSpeed: 1
   landingGearActivate: 1
   animator: {fileID: 1760005489}
   polygonCollider2D: {fileID: 2609437715199178920}
-  landingGearSound: {fileID: 51990082}
   landingGearFactor: 0.6
-  landingGearSpeed: 1
 --- !u!114 &8076139027461167928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,104 +312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onPlatform: 0
-  rechargeFuelMultiplier: 20
-  rocketStatusControl: {fileID: 8177052577059186731}
---- !u!82 &51990082
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760005488}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6220be8574ba77d4182b578428a36c6b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.15
-  m_Pitch: 1.2
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 80
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &775888181164356217
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +359,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.011281274, y: 0}
   m_Size: {x: 2.3803139, y: 7.226203}
   m_Direction: 0
 --- !u!82 &5449500763315319800
@@ -854,7 +537,7 @@ GameObject:
   - component: {fileID: 565028565}
   - component: {fileID: 7913711527478605783}
   m_Layer: 0
-  m_Name: Thruster
+  m_Name: Thruster 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -867,7 +550,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2192425904004054018}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -2.5900006, z: 0}
   m_LocalScale: {x: 0.43089086, y: 0.43089086, z: 0.43089086}
   m_Children: []
@@ -881,7 +564,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2192425904004054018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -956,12 +639,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67f2fe5cfbe546418bb2303ae2c7acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   newRocketControl: {fileID: 6727565906138614696}
   spriteRenderer: {fileID: 2192425904004054016}
   engineAudio: {fileID: 7913711527478605783}
-  thrusterAngle: 15
-  thrusterXPosition: 0.25
 --- !u!82 &7913711527478605783
+=======
+  driftFactor: 0.95
+  accelerationFactor: 70
+  turnFactor: 6
+  maxSpeed: 5
+  landingGearFactor: 0.6
+ FixLandindGearAnimation
+  accelerationInput: 0
+ main
+  thruster: {fileID: 2192425904004054018}
+  rocketRigidBody2D: {fileID: 2192425904425994478}
+  rocketGameObject: {fileID: 2192425904425994483}
+  landingGearController: {fileID: 1889727316}
+--- !u!50 &2192425904425994478
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192425904425994483}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0
+  m_AngularDrag: 0.1
+  m_GravityScale: 2
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &2192425904425994477
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192425904425994483}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011281274, y: 0}
+  m_Size: {x: 2.3803139, y: 7.226203}
+  m_Direction: 0
+--- !u!82 &8654078838389443884
+>>>>>>> FixLandindGearAnimation
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1066,8 +800,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2192425904425994481}
-  - component: {fileID: 3122752173530501951}
   - component: {fileID: 6727565906138614696}
+  - component: {fileID: 3122752173530501951}
   - component: {fileID: 7494780642074617135}
   - component: {fileID: 8177052577059186731}
   m_Layer: 0
@@ -1092,10 +826,35 @@ Transform:
   - {fileID: 2192425904004054143}
   - {fileID: 1760005491}
   - {fileID: 485030247}
-  - {fileID: 1325020538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6727565906138614696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192425904425994483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfb5c28bb4cea148862d9c47a9e1028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrusterInput: 0
+  thrustMultiplier: 30
+  reverseThrustMultiplier: 5
+  vernierThrusterMultiplier: 3
+  rocketVerticalMaxSpeed: 4
+  rocketHorizontalMaxSpeed: 5
+  rotationSpeed: 5
+  rocketAngleValue: 0
+  dragValue: 1
+  dragTime: 3
+  rocketRigidBody2D: {fileID: 3122752173530501951}
+  landingGearController: {fileID: 1889727316}
+  rocketDestruction: {fileID: 7494780642074617135}
+  thrusterController: {fileID: 565028565}
 --- !u!50 &3122752173530501951
 Rigidbody2D:
   serializedVersion: 4
@@ -1117,38 +876,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6727565906138614696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2192425904425994483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccfb5c28bb4cea148862d9c47a9e1028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAlive: 1
-  thrusterInput: 0
-  steeringInput: 0
-  thrustMultiplier: 30
-  rocketFuelValue: 100
-  rocketFuelMultiplier: 5
-  reverseThrustMultiplier: 5
-  vernierThrusterMultiplier: 3
-  rocketVerticalMaxSpeed: 4
-  rocketHorizontalMaxSpeed: 5
-  rotationSpeed: 5
-  rocketAngleValue: 0
-  dragValue: 1
-  dragTime: 3
-  VernierThrusterSignal: 0
-  rocketRigidBody2D: {fileID: 3122752173530501951}
-  landingGearController: {fileID: 1889727316}
-  rocketDestruction: {fileID: 7494780642074617135}
-  thrusterController: {fileID: 565028565}
-  vernierThrusterControl: {fileID: 553909940}
 --- !u!114 &7494780642074617135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,6 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423ba563c09bb1e43ab6f02ed0e9fd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
   explosionAudio: {fileID: 5449500763315319800}
   rocketRigidBody2D: {fileID: 3122752173530501951}
   rocketSpriteRenderer: {fileID: 8348322856440771800}
