@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class ThrusterController : MonoBehaviour
 {
-    [SerializeField] NewRocketControl newRocketControl;
+    [SerializeField] private NewRocketControl newRocketControl;
 
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
-    [SerializeField] AudioSource engineAudio;
+    [SerializeField] private AudioSource engineAudio;
 
-    [SerializeField] float thrusterAngle;
-    [SerializeField] float thrusterXPosition;
+    [SerializeField] private float thrusterAngle;
+    [SerializeField] private float thrusterXPosition;
 
     public void SetThruster(float thrusterInput)
     {
         if (thrusterInput > 0)
         {
 
-            if (newRocketControl.steeringInput > 0)
+            if (newRocketControl.SteeringInput > 0)
             {
                 transform.localPosition = new Vector3(thrusterXPosition, transform.localPosition.y, transform.localPosition.z);
                 transform.localRotation = Quaternion.Euler(0, 0, thrusterAngle);
             }
-            if (newRocketControl.steeringInput < 0)
+            if (newRocketControl.SteeringInput < 0)
             {
                 transform.localPosition = new Vector3(-thrusterXPosition, transform.localPosition.y, transform.localPosition.z);
                 transform.localRotation = Quaternion.Euler(0, 0, -thrusterAngle);
             }
-            if (newRocketControl.steeringInput == 0)
+            if (newRocketControl.SteeringInput == 0)
             {
                 transform.localPosition = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
                 transform.localRotation = Quaternion.Euler(0, 0, 0);

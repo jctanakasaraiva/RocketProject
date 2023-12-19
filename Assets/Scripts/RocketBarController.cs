@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class RocketBarController : MonoBehaviour
 {
-    public Image rocketFuelBarFill;
-    public float rocketBarValue;
-    [SerializeField] AudioSource FuelAlertSound;
-    public Gradient gradient;
+    [SerializeField] private Image rocketFuelBarFill;
+    [SerializeField] private float rocketBarValue;
+    [SerializeField] private AudioSource FuelAlertSound;
+    [SerializeField] private Gradient gradient;
 
     void Update()
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketStatusControl : MonoBehaviour
+public class RocketStatusControl : MonoBehaviour // TODO: Remove
 {
 
     public bool isDead;

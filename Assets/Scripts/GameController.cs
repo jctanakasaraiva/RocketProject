@@ -4,18 +4,18 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-    float TimerToInstance;
-    public int totalScore;
-    public Text scoreText;
-    public int rocketAngle;
-    public Text rocketAngleText;
-    public Text rocketFuelText;
-    public float rocketVernierFuel;
-    public int totalInstancedItems;
-    public GameObject satellitePrefab;
-    public GameObject playerPrefab;
-    [SerializeField] Transform platformTransform;
-    Vector3 playerSpawnPosition;
+    private float TimerToInstance;
+    public int totalScore; // TODO: Decouple
+    [SerializeField] private Text scoreText;
+    public int rocketAngle; // TODO: Decouple
+    [SerializeField] private Text rocketAngleText;
+    public Text rocketFuelText; //TODO: Remove
+    public float rocketVernierFuel; //TODO: Remove
+    public int totalInstancedItems; //TODO: Decouple
+    [SerializeField] private GameObject satellitePrefab;
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private Transform platformTransform;
+    private Vector3 playerSpawnPosition;
 
     void Start()
     {

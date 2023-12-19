@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class RocketFuelControl : MonoBehaviour
 {
-    public float rocketFuelValue;
-    public float rocketFuelMultiplier;
-    public Slider slider;
+    [SerializeField] private float rocketFuelValue;
+    [SerializeField] private float rocketFuelMultiplier;
+    public Slider slider; // TODO: Remove
 
     void Update()
     {

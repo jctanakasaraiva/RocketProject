@@ -6,7 +6,7 @@ public class RocketDestruction : MonoBehaviour
 {
     public static RocketDestruction instance;
 
-    [SerializeField] AudioSource explosionAudio;
+    [SerializeField] private AudioSource explosionAudio;
     [SerializeField] private Rigidbody2D rocketRigidBody2D;
     [SerializeField] private SpriteRenderer rocketSpriteRenderer;
     [SerializeField] private SpriteRenderer thrusterSpriteRenderer;

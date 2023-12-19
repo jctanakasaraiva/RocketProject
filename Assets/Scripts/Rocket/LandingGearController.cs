@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class LandingGearController : MonoBehaviour
 {
-    public bool landingGearActivate = true;
+    [SerializeField] private bool landingGearActivate = true;
 
-    public Animator animator;
+    [SerializeField] private Animator animator;
 
-    public PolygonCollider2D polygonCollider2D;
+    [SerializeField] private PolygonCollider2D polygonCollider2D;
 
-    [SerializeField] AudioSource landingGearSound;
+    [SerializeField] private AudioSource landingGearSound;
 
     [Range(0.1f, 1f)]
-    public float landingGearFactor;
+    [SerializeField] private float landingGearFactor;
 
-    public float landingGearSpeed;
+    [SerializeField] private float landingGearSpeed;
+    public float LandingGearSpeed => landingGearSpeed;
 
     void Start()
     {
