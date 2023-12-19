@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TopDownRocketController : MonoBehaviour
+public class TopDownRocketController : MonoBehaviour // TODO: Remove
 {
     [Header("Rocket Settings")]
     public float driftFactor = 0.95f;
@@ -26,7 +26,7 @@ public class TopDownRocketController : MonoBehaviour
     }
 
     void updateLandingGearSpeed(){
-        landingGearSpeed = landingGearController.landingGearSpeed;
+        landingGearSpeed = landingGearController.LandingGearSpeed;
     }
 
     void ApplyEngineForce()

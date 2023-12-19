@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class LandingGearCollider : MonoBehaviour
 {
-    public bool onPlatform;
-
-    public float rechargeFuelMultiplier;
-
+    [SerializeField] private bool onPlatform;
+    [SerializeField] private float rechargeFuelMultiplier;
     [SerializeField] private RocketStatusControl rocketStatusControl;
 
     private void OnCollisionEnter2D(Collision2D collider)

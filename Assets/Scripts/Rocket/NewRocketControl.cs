@@ -6,23 +6,27 @@ public class NewRocketControl : MonoBehaviour
 {
     public static NewRocketControl instance;
     public bool isAlive;
-    public float thrusterInput;
-    public float steeringInput;
-    private float rotationAngle;
+    [SerializeField] private float thrusterInput;
+    [SerializeField] private float steeringInput;
+    public float SteeringInput => steeringInput;
+    [SerializeField] private float rotationAngle;
     [SerializeField] private float thrustMultiplier;
     public float rocketFuelValue = 100;
-    public float rocketFuelMultiplier;
-    public float reverseThrustMultiplier;
-    public float vernierThrusterMultiplier;
-    private float rocketUpVelocity;
-    private float rocketRightVelocity;
-    public float rocketVerticalMaxSpeed;
-    public float rocketHorizontalMaxSpeed;
-    public float rotationSpeed;
-    public float rocketAngleValue;
-    public float dragValue;
-    public float dragTime;
-    public float VernierThrusterSignal;
+    [SerializeField] private float rocketFuelMultiplier;
+    [SerializeField] private float reverseThrustMultiplier;
+    [SerializeField] private float vernierThrusterMultiplier;
+    [SerializeField] private float rocketUpVelocity;
+    [SerializeField] private float rocketRightVelocity;
+    [SerializeField] private float rocketVerticalMaxSpeed;
+    [SerializeField] private float rocketHorizontalMaxSpeed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float rocketAngleValue;
+    public float RocketAngleValue => rocketAngleValue;
+    [SerializeField] private float dragValue;
+    [SerializeField] private float dragTime;
+    public float DragTime => dragTime;
+    private float _vernierThrusterSignal;
+    public float VernierThrusterSignal => _vernierThrusterSignal;
     [SerializeField] private Rigidbody2D rocketRigidBody2D;
     [SerializeField] private LandingGearController landingGearController;
     [SerializeField] private RocketDestruction rocketDestruction;
@@ -56,7 +60,7 @@ public class NewRocketControl : MonoBehaviour
             }
             rocketRightVelocity = Vector2.Dot(transform.right, rocketRigidBody2D.velocity);
             Vector2 thrustForce = new Vector2(0, 0);
-            float landingGearSpeed = landingGearController.landingGearSpeed;
+            float landingGearSpeed = landingGearController.LandingGearSpeed;
             if (thrusterInput > 0)
             {
                 thrustForce = transform.up * thrustMultiplier * thrusterInput * landingGearSpeed;
@@ -103,13 +107,13 @@ public class NewRocketControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     vernierThruster = transform.right * -vernierThrusterMultiplier;
-                    VernierThrusterSignal = vernierThruster.normalized.x;
+                    _vernierThrusterSignal = vernierThruster.normalized.x;
                     vernierThrusterControl.EnableVernierThruster();
                 }
                 if (Input.GetKey(KeyCode.Q))
                 {
                     vernierThruster = transform.right * vernierThrusterMultiplier;
-                    VernierThrusterSignal = vernierThruster.normalized.x;
+                    _vernierThrusterSignal = vernierThruster.normalized.x;
                     vernierThrusterControl.EnableVernierThruster();
                 }
                 if (Input.GetKey(KeyCode.Q) == false && Input.GetKey(KeyCode.E) == false)

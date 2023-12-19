@@ -5,10 +5,10 @@ using UnityEngine.UIElements;
 
 public class Parallax : MonoBehaviour
 {
-    public GameObject waves;
-    public float parallaxSpeed;
+    [SerializeField] private GameObject waves;
+    [SerializeField] private float parallaxSpeed;
     private float length;
-    private float startPosition;
+    private float startPosition; //TODO: Remove
     private float actualPosition;
     // Start is called before the first frame update
 

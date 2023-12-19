@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class Satellite : MonoBehaviour
 {
-
-    public int score;
+    [SerializeField] private int score;
     private SpriteRenderer spriteRenderer;
     private CapsuleCollider2D capsuleCollider2D;
-    public GameObject destructionAnimation;
-    public AudioSource collectedAudio;
+    [SerializeField] private GameObject destructionAnimation;
+    [SerializeField] private AudioSource collectedAudio;
 
-    public float satelliteCountdownTimer;
+    [SerializeField] private float satelliteCountdownTimer;
 
     bool itemDead;
 

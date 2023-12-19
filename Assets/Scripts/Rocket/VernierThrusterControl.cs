@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class VernierThrusterControl : MonoBehaviour
 {
-    public static VernierThrusterControl instance;
-    [SerializeField] NewRocketControl newRocketControl;
-    [SerializeField] AudioSource vernierThrusterSound;
-    [SerializeField] SpriteRenderer vernierThrusterSpriteRenderer;
-    [SerializeField] public float vernierThrusterFuel = 100;
-    [SerializeField] public float vernierThrusterMultiplier;
+    public static VernierThrusterControl instance; // TODO: Replace with event system
+    [SerializeField] private NewRocketControl newRocketControl;
+    [SerializeField] private AudioSource vernierThrusterSound;
+    [SerializeField] private SpriteRenderer vernierThrusterSpriteRenderer;
+    [SerializeField] public float vernierThrusterFuel = 100; //TODO: Decouple
+    [SerializeField] private float vernierThrusterMultiplier;
 
     private void Awake() => instance = this;
 

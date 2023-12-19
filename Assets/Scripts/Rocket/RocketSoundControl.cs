@@ -3,7 +3,7 @@ using UnityEngine;
 public class RocketSoundControl : MonoBehaviour
 {
     [SerializeField] private TopDownRocketController topDownRocketController;
-    public AudioSource engineAudio;
+    [SerializeField] private AudioSource engineAudio;
     private float rocketAcceleration;
 
     // Update is called once per frame

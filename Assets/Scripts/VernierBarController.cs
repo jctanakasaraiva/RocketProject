@@ -3,10 +3,9 @@ using UnityEngine.UI;
 
 public class VernierBarController : MonoBehaviour
 {
-    public Image vernierBarFill;
-    public float vernierBarValue;
-
-    public Gradient gradient;
+    [SerializeField] private Image vernierBarFill;
+    [SerializeField] private float vernierBarValue;
+    [SerializeField] private Gradient gradient;
 
     void Update()
     {
