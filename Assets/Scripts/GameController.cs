@@ -9,8 +9,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private Text scoreText;
     public int rocketAngle; // TODO: Decouple
     [SerializeField] private Text rocketAngleText;
-    public Text rocketFuelText; //TODO: Remove
-    public float rocketVernierFuel; //TODO: Remove
     public int totalInstancedItems; //TODO: Decouple
     [SerializeField] private GameObject satellitePrefab;
     [SerializeField] private GameObject playerPrefab;
