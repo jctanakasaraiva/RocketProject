@@ -7,6 +7,7 @@ public class NewRocketControl : MonoBehaviour
     public static NewRocketControl instance;
     public bool isAlive;
     [SerializeField] private float thrusterInput;
+    public float ThrusterInput => thrusterInput;
     [SerializeField] private float steeringInput;
     public float SteeringInput => steeringInput;
     [SerializeField] private float rotationAngle;
