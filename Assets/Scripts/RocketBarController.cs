@@ -8,7 +8,7 @@ public class RocketBarController : MonoBehaviour
     [SerializeField] private AudioSource FuelAlertSound;
     [SerializeField] private Gradient gradient;
 
-    void Update()
+    private void Update()
     {
         UpdateFuelBar();
     }
