@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class RocketSoundControl : MonoBehaviour
 {
-    [SerializeField] private TopDownRocketController topDownRocketController;
     [SerializeField] private AudioSource engineAudio;
     private float rocketAcceleration;
 
@@ -14,7 +13,7 @@ public class RocketSoundControl : MonoBehaviour
 
     public void PlayEngineAudio()
     {
-        rocketAcceleration = topDownRocketController.accelerationInput;
+        rocketAcceleration = NewRocketControl.instance.SteeringInput;
         if (rocketAcceleration > 0.5 && engineAudio.isPlaying == false)
         {
             engineAudio.Play();
