@@ -18,20 +18,20 @@ public class LandingGearController : MonoBehaviour
     [SerializeField] private float landingGearSpeed;
     public float LandingGearSpeed => landingGearSpeed;
 
-    void Start()
+    private void Start()
     {
         animator.SetBool("LandingGearOff", landingGearActivate);
         polygonCollider2D = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         LandingGearInputControl();
         LandingGearSpeedUpdate();
     }
 
-    void LandingGearInputControl()
+    private void LandingGearInputControl()
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -45,7 +45,7 @@ public class LandingGearController : MonoBehaviour
         }
     }
 
-    void LandingGearSpeedUpdate()
+    private void LandingGearSpeedUpdate()
     {
         if (landingGearActivate)
         {

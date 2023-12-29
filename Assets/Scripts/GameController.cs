@@ -9,21 +9,19 @@ public class GameController : MonoBehaviour
     [SerializeField] private Text scoreText;
     public int rocketAngle; // TODO: Decouple
     [SerializeField] private Text rocketAngleText;
-    public Text rocketFuelText; //TODO: Remove
-    public float rocketVernierFuel; //TODO: Remove
     public int totalInstancedItems; //TODO: Decouple
     [SerializeField] private GameObject satellitePrefab;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform platformTransform;
     private Vector3 playerSpawnPosition;
 
-    void Start()
+    private void Start()
     {
         instance = this;
         TimerToInstance = 0;
     }
 
-    void Update()
+    private void Update()
     {
         RandomInstanceItems();
         TimerToInstanceCountDown();
@@ -32,17 +30,17 @@ public class GameController : MonoBehaviour
         UpdateScoreText();
     }
 
-    public void UpdateScoreText()
+    private void UpdateScoreText()
     {
         scoreText.text = totalScore.ToString();
     }
 
-    void UpdateRocketAngle()
+    private void UpdateRocketAngle()
     {
         rocketAngleText.text = rocketAngle.ToString();
     }
 
-    void RandomInstanceItems()
+    private void RandomInstanceItems()
     {
         if (totalInstancedItems < 1 & TimerToInstance <= 0)
         {
@@ -53,12 +51,12 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void TimerToInstanceCountDown()
+    private void TimerToInstanceCountDown()
     {
         TimerToInstance -= Time.deltaTime;
     }
 
-    void InstanceNewPlayer()
+    private void InstanceNewPlayer()
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
