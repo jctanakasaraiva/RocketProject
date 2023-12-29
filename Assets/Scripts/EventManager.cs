@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static event Action UpdateScoreEvent;
+    public static event Action ClearScoreEvent;
+
+    public static void StartUpdateScoreEvent()
     {
-        
+        UpdateScoreEvent?.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void StartClearScoreEvent()
     {
-        
+        ClearScoreEvent?.Invoke();
     }
 }

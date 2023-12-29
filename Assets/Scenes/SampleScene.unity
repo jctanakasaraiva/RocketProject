@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 151799876}
   - component: {fileID: 151799878}
   - component: {fileID: 151799877}
+  - component: {fileID: 151799879}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -259,6 +260,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151799875}
   m_CullTransparentMesh: 1
+--- !u!114 &151799879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151799875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54c291d383d44844b98a4007d52349d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 151799877}
 --- !u!1 &186415766
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +491,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &284714664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284714666}
+  - component: {fileID: 284714665}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &284714665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284714664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a5b03f5631a74e9da52b7972db088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &284714666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284714664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.86251, y: 0.46340993, z: -4.1619673}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &373935556
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,8 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ad0cc04a379b746b58252e05ab33e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalScore: 0
-  scoreText: {fileID: 151799877}
   rocketAngle: 0
   rocketAngleText: {fileID: 1744305579}
   rocketFuelText: {fileID: 0}

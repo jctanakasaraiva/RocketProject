@@ -32,7 +32,7 @@ public class Satellite : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             collectedAudio.Play();
-            GameController.instance.totalScore += score;
+            EventManager.StartUpdateScoreEvent();
             destroySatellite();
         }
     }

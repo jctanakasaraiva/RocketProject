@@ -5,8 +5,6 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     private float TimerToInstance;
-    public int totalScore; // TODO: Decouple
-    [SerializeField] private Text scoreText;
     public int rocketAngle; // TODO: Decouple
     [SerializeField] private Text rocketAngleText;
     public Text rocketFuelText; //TODO: Remove
@@ -29,12 +27,6 @@ public class GameController : MonoBehaviour
         TimerToInstanceCountDown();
         InstanceNewPlayer();
         UpdateRocketAngle();
-        UpdateScoreText();
-    }
-
-    public void UpdateScoreText()
-    {
-        scoreText.text = totalScore.ToString();
     }
 
     void UpdateRocketAngle()

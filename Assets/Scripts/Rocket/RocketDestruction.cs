@@ -29,7 +29,7 @@ public class RocketDestruction : MonoBehaviour
             rocketSpriteRenderer.enabled = false;
             thrusterSpriteRenderer.enabled = false;
             landingGearSpriteRenderer.enabled = false;
-            GameController.instance.totalScore = 0;
+            EventManager.StartClearScoreEvent();
             NewRocketControl.instance.rocketFuelValue = 100;
             VernierThrusterControl.instance.vernierThrusterFuel = 100;
             Destroy(gameObject, 1f);
