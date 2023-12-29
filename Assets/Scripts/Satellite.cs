@@ -22,12 +22,12 @@ public class Satellite : MonoBehaviour
         itemDead = false;
     }
 
-    void Update()
+    private void Update()
     {
         SatelliteTimer();
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
@@ -37,7 +37,7 @@ public class Satellite : MonoBehaviour
         }
     }
 
-    void SatelliteTimer()
+    private void SatelliteTimer()
     {
         if (satelliteCountdownTimer >= 0)
         {
@@ -49,7 +49,7 @@ public class Satellite : MonoBehaviour
         }
     }
 
-    void destroySatellite()
+    private void DestroySatellite()
     {
         destructionAnimation.SetActive(true);
         spriteRenderer.enabled = false;

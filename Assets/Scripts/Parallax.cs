@@ -13,7 +13,8 @@ public class Parallax : MonoBehaviour
     // Start is called before the first frame update
 
     private bool instantiateWave = false;
-    void Start()
+
+    private void Start()
     {
         startPosition = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
@@ -31,7 +32,7 @@ public class Parallax : MonoBehaviour
         MoveParallax();
     }
 
-    void MoveParallax()
+    private void MoveParallax()
     {
         actualPosition = transform.position.x;
 
